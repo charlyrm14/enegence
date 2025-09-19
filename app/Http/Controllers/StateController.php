@@ -34,4 +34,22 @@ class StateController extends Controller
             'states' => $data
         ]);
     }
+
+    /**
+     * Display a view with the towns by state name
+     *
+     *  @param string $stateName The name of the state
+     *  @return array Towns data from the Copomex API
+     *  @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException Throws 404 if no towns are found.
+     */
+    public function townsByState(string $stateName)
+    {
+        $towns = CopomexService::getTownsByState($stateName);
+
+        if(!$towns) {
+            abort(404);
+        }
+
+        return $towns;
+    }
 }

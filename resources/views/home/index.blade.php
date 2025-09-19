@@ -27,7 +27,7 @@
                                     <td> {{$state->name }}</td>
                                     <td>
                                         <a 
-                                            href="{{ $state->name }}"
+                                            href="{{ route('towns.name', $state->name ) }}"
                                             class="btn btn-primary rounded-pill fs-6">
                                                 Ver municipios por estado
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
