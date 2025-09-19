@@ -20,28 +20,22 @@ class StateController extends Controller
      */
     public function index()
     {
-        $data = [];
-
         $statesDB = State::get();
 
-        if(!$statesDB->isEmpty()) {
-
-            $data = $statesDB;
-
-        } else {
+        if($statesDB->isEmpty()) {
 
             $statesApi = CopomexService::getStates();
 
-            if(!is_null($statesApi)) {
-
-                StatesService::storeStates($statesApi);
-                $data = State::get();
+            if (is_null($statesApi)) {
+                abort(404);
             }
-        }
 
+            StatesService::storeStates($statesApi);
+            $statesDB = State::get();
+        }
         
         return view('home/index', [
-            'states' => $data
+            'states' => $statesDB
         ]);
     }
 
