@@ -8,6 +8,16 @@ use App\Services\StatesService;
 
 class StateController extends Controller
 {
+    /**
+     * Display a states list of states
+     *
+     * This method first attempts to load states from database. if no data is found
+     * it fetches the states from the Copomex API, stores them in the database,
+     * and then retrieves them for display
+     *
+     * @return \Illuminate\View\View The view for the home page with the states data
+     *
+     */
     public function index()
     {
         $data = [];
