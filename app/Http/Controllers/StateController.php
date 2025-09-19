@@ -45,11 +45,14 @@ class StateController extends Controller
     public function townsByState(string $stateName)
     {
         $towns = CopomexService::getTownsByState($stateName);
-
+    
         if(!$towns) {
             abort(404);
         }
 
-        return $towns;
+        return view('towns/index', [
+            'state' => $stateName,
+            'towns' => $towns
+        ]);
     }
 }
