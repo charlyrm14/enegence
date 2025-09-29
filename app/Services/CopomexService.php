@@ -20,7 +20,7 @@ class CopomexService {
 
             $token = config('copomex.api_token');
             $url = config('copomex.base_url') . '/get_estados?token=' . $token;
-
+            dd($url);
             $response = Http::timeout(5)->get($url);
             
             if($response->failed() || !$response->successful()) {
