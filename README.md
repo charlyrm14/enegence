@@ -7,6 +7,7 @@ Este proyecto está desarrollado con Laravel 12 y utiliza un Observer como patr�
 - PHP: 8.3.20
 - MySQL: 9.3.0
 - Composer: última versión recomendada
+- Boostrap: 5.3.8
 
 ## ⚙️ Instalación del proyecto
 
