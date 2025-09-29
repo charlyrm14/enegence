@@ -1,16 +1,4 @@
 {
-  "version": 2,
-  "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.4"
-    }
-  },
-  "routes": [
-  ],
-  "outputDirectory": "public"
-}
-
-{
     "version": 2,
     "framework": null,
     "functions": {
@@ -37,5 +25,6 @@
         "SESSION_DRIVER": "cookie",
         "COPOMEX_API_TOKEN":"",
         "COPOMEX_BASE_URL":""
-    }
+    },
+     "outputDirectory": "public"
 }
