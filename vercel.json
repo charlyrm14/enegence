@@ -1,8 +1,13 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
   "functions": {
-    "api/users/**/*.js": {
-      "maxDuration": 30
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.1" 
+      // Si usas Laravel 10 o 11, esta versión suele ser estable.
     }
-  }
+  },
+  "routes": [
+    // ... (El resto de tus rutas y outputDirectory)
+  ],
+  "outputDirectory": "public"
 }
