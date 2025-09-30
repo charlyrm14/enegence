@@ -18,8 +18,8 @@ class CopomexService {
     {
         try {
 
-            $token = config('copomex.api_token');
-            $url = config('copomex.base_url') . '/get_estados?token=' . $token;
+            $token = '378308db-6428-4598-8091-07c9705a0021';
+            $url = 'https://api.copomex.com/query/get_estados?token=' . $token;
 
             $response = Http::timeout(5)->get($url);
             
@@ -45,8 +45,8 @@ class CopomexService {
     {
         try {
 
-            $token = config('copomex.api_token');
-            $url = config('copomex.base_url') . "/get_municipio_por_estado/{$stateName}?token=" . $token;
+            $token = '378308db-6428-4598-8091-07c9705a0021';
+            $url = "https://api.copomex.com/query/get_municipio_por_estado/{$stateName}?token=" . $token;
 
             $response = Http::timeout(5)->get($url);
             
