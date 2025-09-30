@@ -17,7 +17,7 @@ class CopomexService {
     public static function getStates(): ?array
     {
         try {
-            dd(env('COPOMEX_BASE_URL'));
+
             $token = config('copomex.api_token');
             $url = config('copomex.base_url') . '/get_estados?token=' . $token;
 
